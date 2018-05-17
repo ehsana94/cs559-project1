@@ -1,0 +1,11 @@
+cmake_minimum_required (VERSION 2.8.9)
+project (my_project)
+#set(CMAKE_CXX_STANDARD 11)
+add_compile_options(-std=c++11)
+add_subdirectory(painterly)
+add_subdirectory(resize)
+add_subdirectory(blur)
+add_subdirectory(shared)
+
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin})
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib})
