@@ -13,3 +13,7 @@ add_executable(main src/main.cpp)
 target_link_libraries(main ImagePainting )
 #target_link_libraries(main ${CURSES_LIBRARIES})  
 
+
+add_custom_command(TARGET main PRE_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                       ${CMAKE_CURRENT_SOURCE_DIR}/brushes $<TARGET_FILE_DIR:main>/brushes)
