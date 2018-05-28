@@ -1,0 +1,540 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cla",
+				"class_\tclass"
+			],
+			[
+				"for",
+				"for_\tFor Loop"
+			],
+			[
+				"pu",
+				"push_back\tvoid push_back(const value_type &__x)"
+			],
+			[
+				"P",
+				"pose"
+			],
+			[
+				"re",
+				"remap\tRoslaunch remap completion"
+			],
+			[
+				"node",
+				"node\tRoslaunch node completion"
+			],
+			[
+				"no",
+				"node\tRoslaunch node completion"
+			],
+			[
+				"des",
+				"descartes_planner"
+			],
+			[
+				"incl",
+				"include"
+			],
+			[
+				"RO",
+				"ROS_INFO\tROS_INFO(...)"
+			],
+			[
+				"mov",
+				"move_group_interface"
+			],
+			[
+				"mo",
+				"moveit"
+			],
+			[
+				"pose",
+				"poseTFToMsg"
+			],
+			[
+				"p",
+				"push_back\tvoid push_back(const value_type &__x)"
+			],
+			[
+				"get",
+				"getchar\tint getchar()"
+			],
+			[
+				"a",
+				"argv"
+			],
+			[
+				"in",
+				"inc\t#include <…>"
+			],
+			[
+				"r",
+				"ros"
+			],
+			[
+				"Cl",
+				"class"
+			],
+			[
+				"c",
+				"c_str"
+			],
+			[
+				"inc",
+				"include"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Catkin Builder/Catkin.sublime-build",
+					""
+				],
+				[
+					"Packages/Catkin Builder/Catkin.sublime-build",
+					"build dependences"
+				],
+				[
+					"Packages/Catkin Builder/Catkin.sublime-build",
+					"build with debug flag"
+				]
+			],
+			[
+				"Packages/Catkin Builder/Catkin.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 314.0,
+		"last_filter": "pa",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"subl",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"packa",
+				"Package Control: Enable Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"pac",
+				"Package Control: Disable Package"
+			],
+			[
+				"snippet ",
+				"Snippet: class"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"snipp",
+				"Snippet: Header Snippet"
+			],
+			[
+				"sin",
+				"Snippet: Roslaunch env completion"
+			],
+			[
+				"easyClang",
+				"EasyClangComplete: Show all errors"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"cla",
+				"Clang Format: Set Path"
+			],
+			[
+				"SUB",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"rosassistshowycmextraconf",
+				"SublimeRosAssist: Show ycm_extra_conf"
+			],
+			[
+				"rosassistgenerateclangflags",
+				"SublimeRosAssist: Generate Clang Flags"
+			],
+			[
+				"Ros",
+				"SublimeRosAssist: Generate Clang Flags"
+			],
+			[
+				"rosassistrevealpackage",
+				"SublimeRosAssist: Reveal Package"
+			],
+			[
+				"bash",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"c",
+				"Clang Format: Format Selection"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"Snippet: x",
+				"Snippet: XML Processing Instruction"
+			],
+			[
+				"Snippet: cla",
+				"Snippet: class-..-(class)"
+			],
+			[
+				"Snippet: #in",
+				"Snippet: #include <…>"
+			],
+			[
+				"Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 488.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"tree",
+			"import os",
+			"ls",
+			"5+5",
+			"2*2",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ehsan/painterly_project/cs559-project1"
+	],
+	"file_history":
+	[
+		"/home/ehsan/walle_client.py",
+		"/home/ehsan/temp_ws/src/plan_and_run/launch/demo_run.launch",
+		"/home/ehsan/temp_ws/src/descartes/descartes_core/include/descartes_core/trajectory_pt.h",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/config/joint_limits.yaml",
+		"/home/ehsan/paint_ws/src/mvtest/scripts/static_tf_publisher_desk.py",
+		"/home/ehsan/paint_ws/src/mvtest/scripts/tf_publisher_desk.py",
+		"/home/ehsan/.bashrc",
+		"/home/ehsan/temp_ws/src/ur10_plan_and_run/src/tasks/generate_trajectory.cpp",
+		"/home/ehsan/temp_ws/src/ur10_plan_and_run/src/demo_application.cpp",
+		"/home/ehsan/temp_ws/src/ur10_plan_and_run/src/tasks/run_path.cpp",
+		"/home/ehsan/temp_ws/src/ur10_plan_and_run/launch/demo_run.launch",
+		"/home/ehsan/temp_ws/src/plan_and_run/src/plan_and_run_node.cpp",
+		"/home/ehsan/painterly_project/cs559-project1/CMakeLists.txt",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/config/kinematics.yaml",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/config/controllers.yaml",
+		"/home/ehsan/temp_ws/src/plan_and_run/src/demo_application.cpp",
+		"/home/ehsan/temp_ws/src/ur10_demo_moveit_config/config/kinematics.yaml",
+		"/home/ehsan/temp_ws/src/plan_and_run/include/plan_and_run/demo_application.h",
+		"/home/ehsan/temp_ws/src/ur10_plan_and_run/src/tasks/move_home.cpp",
+		"/home/ehsan/paint_ws/src/myworkcell_core/src/vision_node.cpp",
+		"/home/ehsan/paint_ws/src/myworkcell_support/launch/setup.launch",
+		"/home/ehsan/paint_ws/src/descartes_tutorials/package.xml",
+		"/home/ehsan/paint_ws/src/descartes_tutorials/CMakeLists.txt",
+		"/home/ehsan/primary_ws/src/universal_robot/ur_description/urdf/ur10p2_lm.urdf",
+		"/home/ehsan/primary_ws/src/universal_robot/ur_description/urdf/ur10p.urdf",
+		"/home/ehsan/paint_ws/src/descartes/descartes_planner/package.xml",
+		"/home/ehsan/paint_ws/src/descartes_tutorials/src/tutorial1.cpp",
+		"/home/ehsan/paint_ws/src/myworkcell_core/src/myworkcell_node.cpp",
+		"/home/ehsan/primary_ws/src/universal_robot/ur_description/urdf/ur10p.dae",
+		"/home/ehsan/paint_ws/src/myworkcell_core/src/descartes_node.cpp",
+		"/home/ehsan/.config/sublime-text-3/Packages/User/clang_format_custom.sublime-settings",
+		"/home/ehsan/.config/sublime-text-3/Packages/User/CTags.sublime-settings",
+		"/home/ehsan/.config/sublime-text-3/Packages/User/catkin_tools.sublime-build",
+		"/home/ehsan/.config/sublime-text-3/Packages/CTags/CTags.sublime-settings",
+		"/home/ehsan/paint_ws/src/fake_ar_publisher/msg/ARMarker.msg",
+		"/home/ehsan/paint_ws/src/pr2_tutorials/interactivity/launch/attached_body_tutorial.launch",
+		"/home/ehsan/.config/sublime-text-3/Packages/CTags/Default.sublime-mousemap",
+		"/home/ehsan/paint_ws/src/ur10_demo_descartes/include/ur10_demo_descartes/ur10_robot_model.h",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/launch/planning_context.launch",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/launch/ur10_moveit_planning_execution.launch",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/launch/ur10_moveit_controller_manager.launch.xml",
+		"/home/ehsan/paint_ws/src/mvtest/launch/total.launch",
+		"/home/ehsan/paint_ws/src/.tags",
+		"/home/ehsan/paint_ws/src/myworkcell_moveit_config/config/joint_names.yaml",
+		"/home/ehsan/paint_ws/src/myworkcell_moveit_config/config/controllers.yaml",
+		"/home/ehsan/paint_ws/src/myworkcell_moveit_config/launch/myworkcell_planning_execution.launch",
+		"/home/ehsan/paint_ws/src/ur10_demo_descartes/src/ur_moveit_plugin.cpp",
+		"/home/ehsan/paint_ws/src/myworkcell_core/myworkcell_core.sublime-project",
+		"/home/ehsan/paint_ws/src/myworkcell_moveit_config/launch/myworkcell_moveit_controller_manager.launch.xml",
+		"/home/ehsan/paint_ws/src/myworkcell_core/package.xml",
+		"/home/ehsan/paint_ws/src/myworkcell_core/CMakeLists.txt",
+		"/home/ehsan/paint_ws/src/myworkcell_core/srv/PlanCartesianPath.srv",
+		"/home/ehsan/paint_ws/industrial_training/training/resources/descartes_supplements/descartes_node_unfinished.cpp",
+		"/home/ehsan/paint_ws/src/myworkcell_support/urdf/workcell.urdf",
+		"/tmp/ex.cpp",
+		"/home/ehsan/paint_ws/src/myworkcell_core/srv/LocalizePart.srv",
+		"/home/ehsan/paint_ws/src/mvtest/package.xml",
+		"/home/ehsan/.config/sublime-text-3/Packages/EasyClangComplete/EasyClangComplete.sublime-settings",
+		"/home/ehsan/.config/sublime-text-3/Packages/User/EasyClangComplete.sublime-settings",
+		"/home/ehsan/.config/sublime-text-3/Packages/User/clang_format.sublime-settings",
+		"/home/ehsan/.config/sublime-text-3/Packages/Clang Format/clang_format_custom.sublime-settings",
+		"/home/ehsan/.config/sublime-text-3/Packages/Clang Format/clang_format.sublime-settings",
+		"/media/ehsan/NEW VOLUME/2015301208/urcontrol.conf",
+		"/home/ehsan/primary_ws/src/universal_robot/ur10_moveit_config/config/ur10.srdf",
+		"/home/ehsan/catkin_ws/src/teleop_twist_keyboard/hw1.launch",
+		"/home/ehsan/ros_ws/src/chatter/package.xml",
+		"/home/ehsan/ros_ws/src/chatter/chatter.py",
+		"/home/ehsan/ros_ws/src/chatter/simple_subscriber.py",
+		"/home/ehsan/Advanced_C++/13/Untitled Document~",
+		"/home/ehsan/Advanced_C++/13/01_err_no.cpp",
+		"/run/user/1000/gvfs/sftp:host=cedra-desktop.local/home/cedra/catkin_ws/src/arash_2hand_controller/launch/defa.launch",
+		"/run/user/1000/gvfs/sftp:host=cedra-desktop.local/home/cedra/catkin_ws/src/arash_2hand_controller/launch/arash_2hand_controller.launch",
+		"/run/user/1000/gvfs/sftp:host=cedra-desktop.local/home/cedra/catkin_ws/src/arash_2hand_controller/launch/bache1.launch",
+		"/run/user/1000/gvfs/sftp:host=cedra-desktop.local/home/cedra/catkin_ws/src/arash_2hand_controller/launch/moarefi.launch",
+		"/run/user/1000/gvfs/sftp:host=cedra-desktop.local/home/cedra/base_ws/src/Chefbot_ROS_pkg/chefbot_bringup/launch/wrap_up.launch",
+		"/run/user/1000/gvfs/sftp:host=cedra-desktop.local/home/cedra/catkin_ws/src/arash_2hand_controller/launch/Untitled Folder/arash_2hand_controller_bc.launch",
+		"/home/ehsan/Advanced_C++/10/a.out",
+		"/home/ehsan/Desktop/face_tracker/haarcascade_eye.xml"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"/home/ehsan/paint_ws/build/myworkcell_core",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"2.16",
+			"DemoConfiguration",
+			"PLANNER_ID",
+			"delay",
+			"seed",
+			"plugin",
+			"PI",
+			"pi",
+			"ikfas",
+			"tool0",
+			"traj",
+			"follo",
+			"PlanCartesianPath",
+			"#include <ros/ros.h>\n",
+			"ur10_demo_descartes",
+			"tF",
+			"t",
+			"runtime_error",
+			"JointStateConstPtr",
+			"dense_planner",
+			"descartes_planner",
+			"descartes_trajectory",
+			"descartes_planner",
+			"descartes_utilities",
+			"inc",
+			"node",
+			"state_publi",
+			"robot_state_publisher",
+			"ip",
+			"name",
+			"ur10",
+			"ur5",
+			"UR10",
+			"UR5",
+			"cartesian_client_",
+			"TrajectoryPtPtr",
+			"makeLine"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"0.5"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 53.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 126.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 133.0
+	},
+	"output.exec":
+	{
+		"height": 66.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 126.0
+	},
+	"pinned_build_system": "Packages/Ros Snippets/roslaunch.sublime-build",
+	"project": "painterly.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/paint_ws/src/myworkcell_core/myworkcell_core.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 420.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

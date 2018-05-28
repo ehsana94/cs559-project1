@@ -11,6 +11,7 @@ Thumbs.db
 [Dd]ebug/
 [Rr]elease/
 build/*
+*.tga
 *~
 *_i.c
 *_p.c

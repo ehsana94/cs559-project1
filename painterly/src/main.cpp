@@ -41,6 +41,7 @@ int main(int argc, char* argv[])
 			 << "   7: random stroke"				<< endl 
 			 << "none: 3 circles, sized 8 4 2"      << endl 
 			 << "  ie: 7 8 7 4 7 2(default)"<< endl << endl
+ 			 << "  warning: use even numbers as brush sizes!"<< endl
 			 << "Press any key to quit..."		    << endl;
 		getchar();
 		return 1;
@@ -81,6 +82,8 @@ int main(int argc, char* argv[])
 	catch(const BadPixelData& e)					{ cout << e.what() << endl; }
 	catch(const UnsupportedKernelType& e)			{ cout << e.what() << endl; } 
 	catch(const UnsupportedBrushType& e)			{ cout << e.what() << endl; } 
+	catch(const CurlyStroke::OutOfIndex& e)		   	{ cout << e.what() << endl; } 
+
 
 	cout << "Press any key to quit..." << endl;
 	getchar();

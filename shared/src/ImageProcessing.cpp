@@ -490,8 +490,8 @@ ColorMatrix ImageProcessing::sep_convolve(const ColorMatrix& source,
 ColorMatrix ImageProcessing::sobel(const ColorMatrix& source)
 {
 	ColorMatrix result(source.rows(), source.cols());
-	ColorMatrix blurred(sep_convolve(source, generate1dGaussian(2))); 
-
+	//ColorMatrix blurred(sep_convolve(source, generate1dGaussian(2))); 
+	ColorMatrix blurred = source;
 	// Detect vertical edges
 	KernelMatrix sobelVertical(3,3);
 	sobelVertical(0,0) = -1.0;

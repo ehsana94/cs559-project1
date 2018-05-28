@@ -115,25 +115,98 @@ void Stroke::apply(ColorMatrix& canvas)
 
 			// Increment the brush indices 
 			++bcol;
-			if( bcol >= brush.size() ) { 
-				bcol = 0;
+			if( bcol >= brush.size() ) {  // TODO: It isn't a good implementation especially on  the edges
+				bcol = 0;                 // Make it better to enable incomplete strokes
 				++brow;
 			}
 		}
 	}
 }
 
+
+/* ________________________________________________ */
+/* -------------------- CurlyStroke -------------------- */
+CurlyStroke::CurlyStroke(const Brush& _brush, const Color& _color)
+    : brush(_brush.size(), _brush.getType()), color(_color) {}
+
+void CurlyStroke::apply(ColorMatrix& canvas) {
+  if (!renedered) render();
+
+  for (int i = 0; i < size(); ++i) {
+    Point point = _points[i];
+    Stroke stroke(point.x, point.y, brush, color);
+    stroke.apply(canvas);
+  }
+}
+
+void CurlyStroke::render(){
+	this->_curve.erase(_curve.begin(),_curve.end());
+	this->_curve = this->subdivideCubicBSpline(_points);
+	renedered = true;
+}
+
+
+Point CurlyStroke::point(unsigned int i){
+
+	if ( i>=size())
+		throw OutOfIndex("Error: The entered index for CurleStroke is out of index!");
+	return _points[i];
+	
+}
+
+std::vector<Point> CurlyStroke::subdivideCubicBSpline(
+    const std::vector<Point>& inputCurve) {
+  std::vector<Point> outputCurve;
+
+  if (inputCurve.size() < 1) return outputCurve;
+
+  Point pi0;
+  Point pi1;
+  Point pi2;
+
+  pi0 = (inputCurve)[0];
+
+  outputCurve.push_back(Point(pi0.x, pi0.y));
+
+  if (inputCurve.size() == 1) return outputCurve;
+
+  if (inputCurve.size() == 2) {
+    pi1 = (inputCurve)[1];
+
+    outputCurve.push_back(Point(pi1.x, pi1.y));
+
+    return outputCurve;
+  }
+
+  pi1 = (inputCurve)[1];
+
+  outputCurve.push_back(Point((pi0.x + pi1.x) / 2, (pi0.y + pi1.y) / 2));
+
+  for (int i = 1; i < inputCurve.size() - 1; i++) {
+    pi0 = inputCurve[i - 1];
+    pi1 = inputCurve[i];
+    pi2 = inputCurve[i + 1];
+
+    outputCurve.push_back(Point((pi0.x + 6 * pi1.x + pi2.x) / 8,
+                                (pi0.y + 6 * pi1.y + pi2.y) / 8));
+
+    outputCurve.push_back(Point((pi1.x + pi2.x) / 2, (pi1.y + pi2.y) / 2));
+  }
+
+  outputCurve.push_back(Point(pi2.x, pi2.y));
+  return outputCurve;
+}
+
 /* __________________________________________________ */
 /* -------------------- Painting -------------------- */
-const bool Painting::debug = false;
+const bool Painting::debug = true;
 
 Painting::Painting(const ColorMatrix& source)
-	: source(source), 
-	canvas(source.rows(), source.cols()), 
-	brushes(), 
-	gridSizeFactor(0.25), 
-	errorThreshold(100.0)
-{ }
+    : source(source),
+      canvas(source.rows(), source.cols()),
+      brushes(),
+      gridSizeFactor(0.25),
+      errorThreshold(100.0) {}
 
 /* paint()
  * -------
@@ -149,8 +222,6 @@ void Painting::paint()
 	canvas.fill(Color(255,255,255,255)); 
 	// NOTE : the algorithm calls for the canvas to be painted a special color 
 	// C such that: "the difference between C and any color is MAXINT"
-	// I don't understand how the difference between a constant color 
-	// and any other arbitrary color can be a constant value... 
 
 	// For each brush, from largest to smallest
 	list<Brush>::iterator it  = brushes.begin();
@@ -457,4 +528,94 @@ void Painting::generate(const vector<unsigned int>& brushesAndSizes,
 	}
 
 	paint();
+}
+
+/* paintLayerCurly()
+ * ------------
+ * Paints a layer onto the canvas based on the reference image and current brush.
+ * This is the workhorse of the painterly algorithm.
+ * @param reference - the reference image to use
+ * @param brush - the brush to use
+ */
+void Painting::paintLayerCurly(const ColorMatrix& reference, const Brush& brush) 
+{
+	cout << "\tPainting new layer: brush size = " << brush.size() << endl;
+
+	// Create an empty set of strokes for this layer
+	vector<CurlyStroke> strokes;
+
+	cout << "\t\tCalculating difference image..." << endl;
+
+	// Generate an image of the difference between the canvas and reference image
+	ColorMatrix diff(canvas.rows(), canvas.cols());
+	difference(canvas, reference, diff);
+	// We have save paved areas in order not to make duplicate strokes	
+	Matrix2d<bool> paved(canvas.rows(), canvas.cols());
+	paved.fill(false);
+	// Save difference images if in debug mode
+	if( debug ) {
+		static int diffNum = 0; 
+		stringstream ss;
+		ss << "output-difference" << diffNum++ << ".tga";
+		saveTargaColorMatrix(ss.str(), diff);
+	}
+
+	// Set the grid step size based on the brush size and a constant factor
+	const unsigned int grid = static_cast<unsigned int>(ceil(gridSizeFactor * brush.size()));
+
+	// Generate a set of strokes for this layer
+	for(unsigned int y = 0; y < canvas.rows(); y += grid)
+	for(unsigned int x = 0; x < canvas.cols(); x += grid)
+	{
+		// Get a copy of the local region from the difference image
+		ColorMatrix D(grid, grid);
+		copyRegion(diff, x, y, grid, D);
+
+/* Note: this is only for serious debugging... it creates LOTS of extra images
+		if( debug ) {
+			static unsigned int dNum = 0;
+			stringstream ss;
+			ss << "output-D" << dNum++ << ".tga";
+			saveTargaColorMatrix(ss.str(), D);
+		}
+*/
+		// Calculate the overall error for this region
+		const double areaError = sumDifferences(D) / (grid * grid);
+		
+		// If the error for this region is above the threshold: 
+		// Find the indices for the largest error value in the image, 
+		// and make a stroke with the current brush at that location 
+		// from the reference image.
+		if( areaError > errorThreshold ) { 
+			// Find indices of largest local error in difference region
+			const unsigned int dx = maxErrorColIndex(D);
+			const unsigned int dy = maxErrorRowIndex(D);
+			// Find corresponding indices for reference image
+			const unsigned int x1 = x - (grid / 2) + dx;
+			const unsigned int y1 = y - (grid / 2) + dy;
+			// Create a new stroke at the specified location 
+			strokes.push_back( makeStroke(brush, x1, y1, reference) );
+		}
+	}
+
+	// Randomize the Stroke vector
+	std::random_shuffle(strokes.begin(), strokes.end());
+	
+	cout << "\t\tRendering " << strokes.size() << " strokes..." << endl;
+
+	// Paint all the strokes in a random order
+	vector<Stroke>::iterator it  = strokes.begin();
+	vector<Stroke>::iterator end = strokes.end();
+	for(; it != end; ++it) 
+		(*it).apply(canvas);
+
+	// Save intermediate canvas states if in debug mode
+	if( debug )	{
+		static int intermedNum = 0;
+		stringstream ss;
+		ss << "canvas-intermediate" << intermedNum++ << ".tga";
+		saveTargaColorMatrix(ss.str(), canvas);
+	}
+
+	cout << "\tLayer painted." << endl;
 }

@@ -81,6 +81,44 @@ public:
 	const Color& getColor() const { return color; }
 };
 
+/* ________________________________________________ */
+/* -------------------- Stroke -------------------- */
+class CurlyStroke {
+ private:
+  std::vector<Point> _points;
+  std::vector<Point> _curve;
+  const Brush brush;
+  const Color color;
+  bool renedered = false;
+
+ public:
+  CurlyStroke(const Brush& _brush, const Color& _color);
+
+  void apply(ColorMatrix& canvas);
+  void render();
+
+  void append(const Point& point) {
+    renedered = false;
+    _points.push_back(point);
+  }
+  void append(const std::vector<Point>& points) {
+    renedered = false;
+    _points.insert(_points.end(), points.begin(), points.end());
+  }
+
+  std::vector<Point> subdivideCubicBSpline(
+      const std::vector<Point>& inputCurve);
+  std::vector<Point> curves() const { return _curve; }
+
+  int size() const { return _points.size(); }
+  Point  point(unsigned int i);
+  class OutOfIndex : public std::runtime_error {
+   public:
+    OutOfIndex(const std::string& what_arg) : std::runtime_error(what_arg) {}
+  };
+  // const Brush& getBrush() const { return brush; }
+  // const Color& getColor() const { return color; }
+};
 
 /* __________________________________________________ */
 /* -------------------- Painting -------------------- */
@@ -92,13 +130,14 @@ private:
 	ColorMatrix source;
 	ColorMatrix canvas;
 	std::list<Brush> brushes;
-
+  unsigned int maxStrokeLength = 10; // TODO:: make modifyable
+  unsigned int minStrokeLength = 3;
 	double gridSizeFactor;
 	double errorThreshold;
 
 	void paint();
 	void paintLayer(const ColorMatrix& reference, const Brush& brush);
-	
+	void paintLayerCurly(const ColorMatrix& reference, const Brush& brush);
 	void difference(const ColorMatrix& c1, 
 					const ColorMatrix& c2, 
 					ColorMatrix& diff);
